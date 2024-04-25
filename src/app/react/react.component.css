@@ -1,0 +1,12 @@
+h2{
+    text-align: center;
+    background-color: blueviolet;
+    color: white;
+}
+form{
+    background-color: aqua;
+}
+
+table,th,td {
+    border:  2px solid grey;
+}

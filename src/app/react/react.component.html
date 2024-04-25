@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>Reactive Form</h2>
+    <form [formGroup]="stdForm" (ngSubmit)="onSubmitData()">
+
+        <div class="form-group">
+            <label for="Fname">Fname</label>
+            <input type="text" name="fname" class="form-control" formControlName="fname">
+        </div>
+
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" formControlName="email">
+        </div>
+
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="pass" class="form-control" formControlName="pass">
+        </div>
+        <br>
+
+        <div class="form-group">
+            <button type="" class="btn btn-primary">Submit</button>
+            <br>
+            <input type="reset">
+            <br>
+            <button class="btn btn-info" type="button" (click)="onUpdateit()">Updateit
+                <i class="pi pi-pencil"></i></button>
+
+        </div>
+    </form>
+
+</div>
+
+<div class="container">
+    <table class="table table-stripped">
+        <tr>
+            <th>Fname</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+
+        <tr *ngFor="let x of formData">
+            <td>{{x.fname}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.pass}}</td>
+            <td><button class="btn btn-danger" (click)="onDelete(x)">Delete
+                    <i class="pi pi-trash"></i></button></td>
+
+            <br>
+            <td><button class="btn btn-info" (click)="onUpdate(x)">Update
+                    <i class="pi pi-pencil"></i></button></td>
+
+
+        </tr>
+    </table>
+</div>
